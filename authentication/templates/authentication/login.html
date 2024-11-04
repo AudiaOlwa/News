@@ -1,0 +1,59 @@
+
+  {% load static %}
+  {% include "head.html" %} 
+  {% block content %}
+
+  
+  
+
+<div class="inside-page">
+<div class="container">
+    <div class="row">
+
+        
+            <section class="page-section col-sm-8">
+                <div class="detail-content">            
+                        
+<h1 class="page-title" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Mon compte</h1>
+
+<div class="single-post">
+<div class="post-content">
+    
+            
+    <article>
+        <div class="woocommerce"><div class="woocommerce-notices-wrapper"></div>
+
+    <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Login</h2>
+
+    <form class="woocommerce-form woocommerce-form-login login" method="post">
+
+        
+        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+            <label for="username">Nom d'utilisateur&nbsp;
+                <span class="required">*</span></label>
+            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="" />			</p>
+        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+            <label for="password">Mot de passe&nbsp;<span class="required">*</span></label>
+            <input class="" type="password" name="password" id="password" autocomplete="current-password" />
+        </p>
+
+        
+        <p class="form-row">
+            
+            <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="1df36caf27" /><input type="hidden" name="_wp_http_referer" value="" />	
+            			<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="Log in">Log in</button>
+        </p>
+        
+        
+    </form>
+
+
+</div>
+                </article> <!-- /.end of article -->
+</div>
+
+
+</div>
+  {% endblock content %}
+
+  {% include "script.html" %} 

@@ -1,0 +1,16 @@
+from django.shortcuts import render
+
+# Create your views here.
+def index(request):
+	return render(request, 'index.html')
+
+def blog(request):
+	return render(request, 'blog.html')
+
+def view_blog(request):
+	return render(request, 'view_blog.html')
+
+def login(request):
+	return render(request, 'authentication/login.html')
+
+
