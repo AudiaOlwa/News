@@ -1,14 +1,30 @@
 {% load static %}
 <div class="col-sm-4">
-    <aside id="blog_sidebar_widget_author_bio-2" class="widget widget_blog_sidebar_widget_author_bio">        <div class="blog-sidebar-widget-author-bio-holder">
-<div class="image-holder">
-    <img width="300" height="200" src="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/author.webp" class="attachment-medium size-medium" alt="Jessica Johns" decoding="async" loading="lazy" />            </div> 
+    <aside id="blog_sidebar_widget_author_bio-2" class="widget widget_blog_sidebar_widget_author_bio">
+                <div class="blog-sidebar-widget-author-bio-holder">
+                    
+                <div class="image-holder">
+    {% if user.is_authenticated %}
+    
+                {% if user.profile_photo %}
+            <img class="avatar" src="{{ user.profile_photo.url }}" alt="Profile Photo">
+               {% else %}
+               <img width="300" height="200" src="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/author.webp" class="attachment-medium size-medium" alt="Jessica Johns" decoding="async" loading="lazy" />  
+               {% endif %}
+               {% endif %}
+                      </div> 
+               
 <div class="text-holder">
-    <div class="title-holder">Jessica Johns</div> 
+    <div class="title-holder">{{ user }}</div> 
     <div class="author-bio-content">
-        <p>WordPress is an award-winning web software, used by millions of webmasters worldwide for building their website or blog. </p>
+       
+  
+        <p>Bienvenue, {{ user }} ! 😇 Vous etes connecter en tant que {{ request.user.role }}.</p>  
+  
+
+       
     </div>
-    <div class="text-signature">Jessica Johns</div>                
+    <div class="text-signature">{{ user }}</div>                
     
     <div class="author-bio-socicons">
                                 <ul class="author-socicons">
@@ -49,3 +65,6 @@
                 </ul>
 </aside>
 </div>
+
+
+

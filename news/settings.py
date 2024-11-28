@@ -117,8 +117,15 @@ STATICFILES_DIRS = [
 #    os.path.join(BASE_DIR, 'static')
 
 ]
+# settings.py
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'authentication.User'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT = 'index'
+LOGOUT_REDIRECT_URL = LOGIN_URL

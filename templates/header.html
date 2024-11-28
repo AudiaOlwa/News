@@ -6,7 +6,8 @@
 	
 		<div class="site-title text-center" > 
 		<h1 style="color: blue; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">News</h1> 
-			<p class="site-description" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Actualité en temps réel</p></div>
+<p class="site-description" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+	Suivez l'actualité en temps réel</p></div>
 
 	
 	
@@ -35,13 +36,26 @@
 </ul>
 </li>
 <li id="menu-item-520" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-520"><a title="Blog" href="{% url 'blog' %}">Blog</a></li>
-<li id="menu-item-638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-638 dropdown"><a title="Shop" href="#">Shop <span class="caret"></span></a>
+<li id="menu-item-638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-638 dropdown">
+	<a title="Shop" href="#">Shop <span class="caret"></span></a>
 <ul role="menu" class=" dropdown-menu">
-	<li id="menu-item-639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639"><a title="My account" href="#">My account</a></li>
+	<li id="menu-item-639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639">
+		<a title="My account" href="#">My account</a></li>
 	</ul>
 </li>
-<li id="menu-item-520" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-520"><a title="login" href="{% url 'login' %}">login</a></li>
-
+<li id="menu-item-520" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-520 dropdown">
+	<a title="login" href="#">connexion <span class="caret"></span></a></a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-639">
+			<a title="My account" href="{% url 'login' %}">Se connecter</a>
+			<a title="My account" href="{% url 'logout' %}">Se déconnecter</a>
+			<a title="My account" href="{% url 'password_change' %}">changer le mot de passe</a>
+			<a title="My account" href="{% url 'photo_upload' %}">changer sa photo de profile</a>
+			<a title="My account" href="{% url 'create_multiple_photos' %}">Télécharger des photos d'accueil</a>
+		</li>
+		</ul>
+</li>
+	
 </ul></div>			        
 			    </div> <!-- /.end of collaspe navbar-collaspe -->
 			</nav>

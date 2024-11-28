@@ -1,0 +1,53 @@
+   
+{% load static %}
+{% include "head.html" %} 
+{% block content %}
+
+<div class="inside-page">
+<div class="container">
+  <div class="row">
+
+      
+          <section class="page-section col-sm-8">
+              <div class="detail-content">            
+                      
+
+<div class="single-post">
+<div class="post-content">
+  
+          
+  <article>
+      <div class="woocommerce"><div class="woocommerce-notices-wrapper"></div>
+
+  <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Télécharger des photos 😜🥰</h2>
+  <p>{{ message }}</p>
+  <form class="woocommerce-form woocommerce-form-login login" method="post" enctype="multipart/form-data">
+    {{ formset.management_form }} <!--présenter chaque formulaire du formset individuellement.-->
+
+    {% csrf_token %}
+
+    {% for form in formset %}
+
+        {{ form.as_p }}
+
+    {% endfor %}
+     <p class="form-row">
+          
+          <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="1df36caf27" /><input type="hidden" name="_wp_http_referer" value="" />	
+<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="Log in">
+    Publier👇</button>
+      </p>
+      
+      
+  </form>
+
+
+</div>
+              </article> <!-- /.end of article -->
+</div>
+
+
+</div>
+{% endblock content %}
+
+{% include "script.html" %} 

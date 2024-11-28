@@ -1,76 +1,43 @@
 {% extends 'base.html' %}
   {% load static %}
   {% block content %}
+
  <!-- Google Tag Manager (noscript) -->
 
         <div class="content-area">
             <div class="container">
                 <div class="row">
-                    
-                    
                     <div class="col-sm-8">
-                        
               
-              
-                
-            
                 <div class="slider-banner slider-banner-1">
                   <div id="owl-slider" class="owl-carousel"> 
-                                <div class="item">
-                          <div class="banner-news-list">
-                                            <div class="banner-news-image">
+                    {% for photo in photos %}
+                  <div class="item">
+                    
+                 <div class="banner-news-list">
+                  <div class="banner-news-image">
                                                
-                                <img src="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/man-person-people-white-photography-boy-597582-pxhere.com_.webp" alt="" class="img-responsive">
-                                                </div>
-                              <div class="banner-news-caption">
-                                <h6 class="category"><a class="news-category" href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/design/">Design</a></h6> <h6 class="category"><a class="news-category" href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/fashion/">Fashion</a></h6>                    <h3 class="news-title"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/sports/">Leave for the far world of grammar</a></h3>
-                                                      <div class="info">
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    June 11, 2018                      </div>
+                  <img src="{{ photo.image.url }}" alt="" class="img-responsive" style="height: auto; width: auto; border-radius: 30px;">
+                   </div>
+                  <div class="banner-news-caption">
+                   <h6 class="category"><a class="news-category" href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/lifestyle/">Lifestyle</a></h6>  
+                    <h3 class="news-title"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/">Lifestyle</a></h3>
+                    <div class="info">
+                   <i class="fa fa-clock-o" aria-hidden="true"></i>
+                   {{ photo.date_created|date:"F d, Y" }}                     </div>
                                 
-                                                        <div class="summary"> 
-                                      Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of                        </div>
-                                                                            <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/sports/" class="readmore">Read More</a>
-                                                  </div> 
+                   <div class="summary"> {{ photo.caption }} </div>
+                     <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/" class="readmore">Read More</a>
+                     <p class="text-secondary"><a href="{% url 'edit_photo' photo.id %}">Modifier la 📸</a></p>
+
+                </div> 
+
                           </div>
+
                         </div>
-                                <div class="item">
-                          <div class="banner-news-list">
-                                            <div class="banner-news-image">
-                                               
-                                <img src="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/man-person-woman-photography-fashion-yellow-180040-pxhere.com_.webp" alt="" class="img-responsive">
-                                                </div>
-                              <div class="banner-news-caption">
-                                <h6 class="category"><a class="news-category" href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/uncategorized/">Uncategorized</a></h6>                    <h3 class="news-title"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/wordpress-resources-at-siteground/">WordPress Resources at SiteGround</a></h3>
-                                                      <div class="info">
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    June 21, 2018                      </div>
-                                
-                                                        <div class="summary"> 
-                                      WordPress is an award-winning web software, used by millions of webmasters worldwide for building their website or blog. SiteGround is proud to host this                        </div>
-                                                                            <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/wordpress-resources-at-siteground/" class="readmore">Read More</a>
-                                                  </div> 
-                          </div>
-                        </div>
-                                <div class="item">
-                          <div class="banner-news-list">
-                                            <div class="banner-news-image">
-                                               
-                                <img src="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_.webp" alt="" class="img-responsive">
-                                                </div>
-                              <div class="banner-news-caption">
-                                <h6 class="category"><a class="news-category" href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/lifestyle/">Lifestyle</a></h6>                    <h3 class="news-title"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/">They are still using those farms</a></h3>
-                                                      <div class="info">
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    November 21, 2017                      </div>
-                                
-                                                        <div class="summary"> 
-                                      She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of                        </div>
-                                                                            <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/" class="readmore">Read More</a>
-                                                  </div> 
-                          </div>
-                        </div>
+                        {% endfor %}
                           </div> 
+                          
                 </div>
             
             
@@ -78,15 +45,9 @@
                         
              
                             
-                            <div class="home-archive inside-page post-list">
-                                   
-                                
-                                                              <div class="grid-view blog-list-block">                                         
-                              
-                                                                            
-           
-                                                        
-            <div id="post-26" class="post-26 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle eq-blocks">
+      <div class="home-archive inside-page post-list">
+      <div class="grid-view blog-list-block">                                         
+      <div id="post-26" class="post-26 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle eq-blocks">
                 <div class="news-snippet">        
                           <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/" rel="bookmark" class="featured-image">
                       <img width="1280" height="853" src="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_.webp" class="attachment-medium size-medium wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_.webp 1280w, https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_-768x512.webp 768w, https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_-600x400.webp 600w" sizes="(max-width: 1280px) 100vw, 1280px" />        </a>            
@@ -96,14 +57,8 @@
                     <h4 class="news-title"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/" rel="bookmark">They are still using those farms</a></h4>
                                   <div class="info">
                           <ul class="list-inline">
-            
-                            
-                                                                <li><i class="fa fa-clock-o"></i> <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/2017/11/21/">November 21, 2017</a></li>
-                            
-                                                                              
-            
-                                            
-                          </ul>
+             <li><i class="fa fa-clock-o"></i> <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/2017/11/21/">November 21, 2017</a></li>
+             </ul>
                         </div>
                               
                     <p>She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
@@ -125,14 +80,8 @@
                     <h4 class="news-title"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/new-sport-that-is-winning-that-world/" rel="bookmark">Sport is winning that world</a></h4>
                                   <div class="info">
                           <ul class="list-inline">
-            
-                            
-                                                                <li><i class="fa fa-clock-o"></i> <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/2017/11/21/">November 21, 2017</a></li>
-                            
-                                                                              
-            
-                                            
-                          </ul>
+             <li><i class="fa fa-clock-o"></i> <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/2017/11/21/">November 21, 2017</a></li>
+           </ul>
                         </div>
                               
                     <p>A number of such two-sided contests may be arranged in a tournament producing a champion. Many sports leagues make an annual champion by arranging games.</p>
@@ -142,17 +91,9 @@
                 </div>
             </div>
             </div>
-                                                        
-                         
-                                          </div>
-                        
-                                            
-                            
-                        </div>
-                        
-                        
-                        
-                    </div>
+            </div>
+           </div>
+         </div>
             
                          
                       {% include 'aside.html' %}
