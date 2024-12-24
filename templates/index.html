@@ -17,20 +17,21 @@
                  <div class="banner-news-list">
                   <div class="banner-news-image">
                                                
-                  <img src="{{ photo.image.url }}" alt="" class="img-responsive" style="height: auto; width: auto; border-radius: 30px;">
+                  <img src="{{ photo.image.url }}" alt="" class="img-responsive" 
+                  style=" border-radius: 30px; width: 700px; height: 550px;">
                    </div>
                   <div class="banner-news-caption">
-                   <h6 class="category"><a class="news-category" href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/lifestyle/">Lifestyle</a></h6>  
-                    <h3 class="news-title"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/">Lifestyle</a></h3>
+                   <h6 class="category"><a class="news-category" href="#">Lifestyle</a></h6>  
+                    <h3 class="news-title"><a href="#" style="color:rgba(165, 6, 104, 0.918);">Lifestyle</a></h3>
                     <div class="info">
                    <i class="fa fa-clock-o" aria-hidden="true"></i>
                    {{ photo.date_created|date:"F d, Y" }}                     </div>
                                 
                    <div class="summary"> {{ photo.caption }} </div>
-                     <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/" class="readmore">Read More</a>
+                     <a href="#" class="readmore">Read More</a>
                      <p class="text-secondary"><a href="{% url 'edit_photo' photo.id %}">Modifier la 📸</a></p>
 
-                     
+
                 </div> 
 
                           </div>
@@ -40,58 +41,39 @@
                           </div> 
                           
                 </div>
-            
-            
-              
-                        
-             
-                            
       <div class="home-archive inside-page post-list">
-      <div class="grid-view blog-list-block">                                         
-      <div id="post-26" class="post-26 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle eq-blocks">
-                <div class="news-snippet">        
-                          <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/" rel="bookmark" class="featured-image">
-                      <img width="1280" height="853" src="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_.webp" class="attachment-medium size-medium wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_.webp 1280w, https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_-768x512.webp 768w, https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_-600x400.webp 600w" sizes="(max-width: 1280px) 100vw, 1280px" />        </a>            
-                      <div class="summary">
-                                             <h6 class="category"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/lifestyle/">Lifestyle</a></h6>
-                                       
-                    <h4 class="news-title"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/" rel="bookmark">They are still using those farms</a></h4>
-                                  <div class="info">
-                          <ul class="list-inline">
-             <li><i class="fa fa-clock-o"></i> <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/2017/11/21/">November 21, 2017</a></li>
-             </ul>
-                        </div>
-                              
-                    <p>She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+      <div class="grid-view blog-list-block">   
+        {% for blog in blogs %}                                      
+       <div id="post-165" class="post-165 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-fashion eq-blocks">
+        <div class="news-snippet">        
+          <a href="{% url 'view_blog' blog.id %}" rel="bookmark" class="featured-image">
                     
-                    <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/" rel="bookmark" title="" class="readmore">Read More </a>
-            
-                </div>
-            </div>
-            </div>
-                                                        
-            <div id="post-165" class="post-165 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-fashion eq-blocks">
-                <div class="news-snippet">        
-                          <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/new-sport-that-is-winning-that-world/" rel="bookmark" class="featured-image">
-                      <img width="960" height="640" src="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/fashion-show-1746581_960_720.webp" class="attachment-medium size-medium wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/fashion-show-1746581_960_720.webp 960w, https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/fashion-show-1746581_960_720-768x512.webp 768w, https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/fashion-show-1746581_960_720-600x400.webp 600w" sizes="(max-width: 960px) 100vw, 960px" />        </a>            
-                      <div class="summary">
-                                             <h6 class="category"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/design/">Design</a></h6>
-                                       <h6 class="category"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/fashion/">Fashion</a></h6>
+          <img src="{{ blog.picture.url }}" 
+         class="attachment-post-slider-thumb-size size-post-slider-thumb-size wp-post-image" 
+          alt="" itemprop="image" decoding="async" loading="lazy" 
+        style="border-radius: 30px; width: 350px; height: 350px;" />    
+        </a>                       
+     
+           <div class="summary">
+          <h6 class="category"><a href="#">Design</a></h6>
+           <h6 class="category"><a href="#">Fashion</a></h6>
                                        
-                    <h4 class="news-title"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/new-sport-that-is-winning-that-world/" rel="bookmark">Sport is winning that world</a></h4>
-                                  <div class="info">
-                          <ul class="list-inline">
-             <li><i class="fa fa-clock-o"></i> <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/2017/11/21/">November 21, 2017</a></li>
+          <h4 class="news-title"><a href="{% url 'view_blog' blog.id %}" rel="bookmark" >{{ blog.title }}</a></h4>
+           <div class="info">
+          <ul class="list-inline">
+          <li><i class="fa fa-clock-o"></i> <a href="#">{{ blog.date_created|date:"F d, Y" }}</a></li>
            </ul>
-                        </div>
+          </div>
                               
-                    <p>A number of such two-sided contests may be arranged in a tournament producing a champion. Many sports leagues make an annual champion by arranging games.</p>
+    <p>{{ blog.lead }}</p>
                     
-                    <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/new-sport-that-is-winning-that-world/" rel="bookmark" title="" class="readmore">Read More </a>
+  <a href="{% url 'view_blog' blog.id %}" rel="bookmark" title="" class="readmore">Read More </a>
+  <p class="text-secondary"><a href="{% url 'edit_blog' blog.id %}">Modifier l'article</a></p>
             
                 </div>
             </div>
             </div>
+            {% endfor %}
             </div>
            </div>
          </div>
@@ -106,9 +88,6 @@
                     <!-- banner-news -->
 
 {% endblock content %}
-
-
-
 
 </body>
 

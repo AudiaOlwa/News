@@ -8,80 +8,55 @@
 	</div>
 <div class="post-list inside-page">
   <div class="container">
-  	<h1 class="category-title">Lifestyle</h1>    <div class="row">
-
+  	<h1 class="category-title">Actualités</h1>  
+      <div class="row">
+           
       
       <div class="col-sm-8">
         <div class="grid-view blog-list-block">
-                         
+          {% for blog in blogs %}               
                                     
-<div id="post-26" class="post-26 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle eq-blocks">
-    <div class="news-snippet">        
-              <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/" rel="bookmark" class="featured-image">
-          <img width="1280" height="853" src="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_.webp" class="attachment-medium size-medium wp-post-image" alt="" decoding="async" fetchpriority="high" srcset="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_.webp 1280w, https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_-768x512.webp 768w, https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/hand-person-winter-girl-woman-brunette-38683-pxhere.com_-600x400.webp 600w" sizes="(max-width: 1280px) 100vw, 1280px" />        </a>            
-          <div class="summary">
-                                 <h6 class="category"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/lifestyle/">Lifestyle</a></h6>
-                           
-        <h4 class="news-title"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/" rel="bookmark">They are still using those farms</a></h4>
-                      <div class="info">
+          <div id="post-165" class="post-165 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-fashion eq-blocks">
+            <div class="news-snippet">        
+              <a href="{% url 'view_blog' blog.id %}" rel="bookmark" class="featured-image">
+                        
+              <img src="{{ blog.picture.url }}" 
+             class="attachment-post-slider-thumb-size size-post-slider-thumb-size wp-post-image" 
+              alt="" itemprop="image" decoding="async" loading="lazy" 
+            style="border-radius: 30px; width: 350px; height: 350px;" />    
+            </a>                       
+         
+               <div class="summary">
+              <h6 class="category"><a href="#">Design</a></h6>
+               <h6 class="category"><a href="#">Fashion</a></h6>
+                                           
+              <h4 class="news-title"><a href="{% url 'view_blog' blog.id %}" rel="bookmark" >{{ blog.title }}</a></h4>
+               <div class="info">
               <ul class="list-inline">
-
+              <li><i class="fa fa-clock-o"></i> <a href="#">{{ blog.date_created|date:"F d, Y" }}</a></li>
+               </ul>
+              </div>
+                                  
+        <p>{{ blog.lead }}</p>
+                        
+      <a href="{% url 'view_blog' blog.id %}" rel="bookmark" title="" class="readmore">Read More </a>
+      <p class="text-secondary"><a href="{% url 'edit_blog' blog.id %}">Modifier l'article</a></p>
                 
-                                                    <li><i class="fa fa-clock-o"></i> <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/2017/11/21/">November 21, 2017</a></li>
-                
-                                                                  
-
-                                
-              </ul>
-            </div>
-                  
-        <p>She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-        
-        <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/farm/" rel="bookmark" title="" class="readmore">Read More </a>
-
-    </div>
-</div>
-</div>
+                    </div>
+                </div>
+                </div>
                                     
 
                                     
-<div id="post-162" class="post-162 post type-post status-publish format-standard has-post-thumbnail hentry category-design category-lifestyle category-slider eq-blocks">
-    <div class="news-snippet">        
-              <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/a-small-river-named-duden-flows-by-their-place-and-supplies/" rel="bookmark" class="featured-image">
-          <img width="960" height="639" src="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/girl-1828536_960_720.webp" class="attachment-medium size-medium wp-post-image" alt="" decoding="async" srcset="https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/girl-1828536_960_720.webp 960w, https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/girl-1828536_960_720-768x511.webp 768w, https://thebootstrapthemes.com/previews/bootstrap-blog/wp-content/uploads/sites/10/girl-1828536_960_720-600x399.webp 600w" sizes="(max-width: 960px) 100vw, 960px" />        </a>            
-          <div class="summary">
-                                 <h6 class="category"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/design/">Design</a></h6>
-                           <h6 class="category"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/lifestyle/">Lifestyle</a></h6>
-                           <h6 class="category"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/category/slider/">slider</a></h6>
-                           
-        <h4 class="news-title"><a href="https://thebootstrapthemes.com/previews/bootstrap-blog/a-small-river-named-duden-flows-by-their-place-and-supplies/" rel="bookmark">A small river named Duden flows</a></h4>
-                      <div class="info">
-              <ul class="list-inline">
 
-                
-                                                    <li><i class="fa fa-clock-o"></i> <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/2017/11/21/">November 21, 2017</a></li>
-                
-                                                                  
-
-                                
-              </ul>
-            </div>
-                  
-        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line.</p>
-        
-        <a href="https://thebootstrapthemes.com/previews/bootstrap-blog/a-small-river-named-duden-flows-by-their-place-and-supplies/" rel="bookmark" title="" class="readmore">Read More </a>
-
-    </div>
-</div>
-</div>
                                     
 
-                 
+                 {% endfor %}   
 
                 </div>
               </div>  
               {% include 'aside.html' %}
-             
+                
        </div>
   </div>
 </div>

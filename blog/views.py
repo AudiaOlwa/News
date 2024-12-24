@@ -9,15 +9,20 @@ from django.shortcuts import get_object_or_404
 # Create your views here.
 @login_required
 def index(request):
-	photos = models.Photo.objects.all()
-	return render(request, 'index.html', {'photos': photos})
-	
+	photos = models.Photo.objects.order_by('?')
+	blogs = models.Blog.objects.order_by('?')
+	return render(request, 'index.html', {'photos': photos, 'blogs': blogs })
+  	
 @login_required
 def blog(request):
-	return render(request, 'blog.html')
+    blogs = models.Blog.objects.order_by('?')
+    return render(request, 'blog.html', {'blogs': blogs })
 @login_required
-def view_blog(request):
-	return render(request, 'view_blog.html')
+def view_blog(request, blog_id):
+    blog = get_object_or_404(models.Blog, id=blog_id)
+    return render(request, 'view_blog.html', {'blog': blog})
+
+
 
 @login_required
 def create_multiple_photos(request):
@@ -82,5 +87,68 @@ def edit_photo(request, photo_id):
 
     return render(request, 'edit_photo.html', context=context)
 
+@login_required
+def create_multiple_blogs(request):
+
+    BlogFormSet = formset_factory(forms.BlogForm, extra=3)
+
+    formset = BlogFormSet()
+
+    if request.method == 'POST':
+
+        formset = BlogFormSet(request.POST, request.FILES)
+
+        if formset.is_valid():
+
+            for form in formset:
+
+                if form.cleaned_data:
+
+                    blog = form.save(commit=False)
+
+                    blog.uploader = request.user
+
+                    blog.save()
+
+            return redirect('index')
+
+    return render(request, 'create_multiple_blogs.html', {'formset': formset})
+
+
+@login_required
+def edit_blog(request, blog_id):
+
+    blog = get_object_or_404(models.Blog, id=blog_id)
+
+    edit_form = forms.BlogForm(instance=blog)
+
+    delete_form = forms.DeleteBlogForm()
+
+    if request.method == 'POST':
+
+        if 'edit_blog' in request.POST:
+
+            edit_form = forms.BlogForm(request.POST, request.FILES, instance=blog)
+
+            if edit_form.is_valid():
+
+                edit_form.save()
+
+                return redirect('index')
+        if 'delete_blog' in request.POST:
+            delete_form = forms.DeleteBlogForm(request.POST)
+            if delete_form.is_valid():
+                blog.delete()
+                return redirect('index')
+
+    context = {
+
+        'edit_form': edit_form,
+
+        'delete_form': delete_form,
+
+}
+
+    return render(request, 'edit_blog.html', context=context)
 
 

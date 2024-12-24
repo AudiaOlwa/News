@@ -25,6 +25,11 @@ urlpatterns = [
     path('photo_upload/', authentication.views.photo_upload, name='photo_upload'),
     path('photo/upload-multiple/', views.create_multiple_photos, name='create_multiple_photos'),
     path('photo/<int:photo_id>/edit', views.edit_photo, name='edit_photo'),
+    path('blog/<int:blog_id>', views.view_blog, name='view_blog'),
+    path('blog/upload-multiple/', views.create_multiple_blogs, name='create_multiple_blogs'),
+    path('blog/<int:blog_id>/edit', views.edit_blog, name='edit_blog'),
+
+
 ]
 
 if settings.DEBUG:
